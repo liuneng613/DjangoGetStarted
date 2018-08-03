@@ -19,5 +19,5 @@ from apps.message.views import getform
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^form/$', getform) #这行是新增加的.
+    url(r'^form/$', getform, name="form_new") #这行是新增加的.
 ]

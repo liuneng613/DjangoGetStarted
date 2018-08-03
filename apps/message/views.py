@@ -47,4 +47,13 @@ def getform(request):
 #     user_message.object_id = 'ijkl'
 #     user_message.save()
 
-    return render(request, 'message_form.html')
+
+# 将数据回填至html中
+    message = None
+    all_message = UserMessage.objects.filter(name='test02')
+    if all_message:
+        message = all_message[0]
+
+    return render(request, 'message_form.html', {
+        "my_message": message
+    })
